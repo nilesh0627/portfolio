@@ -9,7 +9,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-import { WORK_EXPERIENCE } from "../../Constants/Experience";
+import { WORK_EXPERIENCE } from "../../Constants";
 
 function Experience() {
   return (

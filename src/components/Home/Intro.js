@@ -4,6 +4,7 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { Tooltip } from "@mui/material";
 
 function Intro() {
   return (
@@ -44,26 +45,30 @@ function Intro() {
             Feel free to <span className="primary">connect </span>with me
           </p>
           <ul className="home-about-social-links">
-            <li className="social-icons">
-              <a
-                href="https://github.com/nilesh0627"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour  home-social-icons"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/nilesh0627/"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour  home-social-icons"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
+            <Tooltip title="Github">
+              <li className="social-icons">
+                <a
+                  href="https://github.com/nilesh0627"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <AiFillGithub />
+                </a>
+              </li>
+            </Tooltip>
+            <Tooltip title="Linkedin">
+              <li className="social-icons">
+                <a
+                  href="https://www.linkedin.com/in/nilesh0627/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <FaLinkedinIn />
+                </a>
+              </li>
+            </Tooltip>
           </ul>
         </span>
       </div>

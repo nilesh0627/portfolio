@@ -449,7 +449,13 @@ nav {
         border: 1px solid darkgray;
         border-radius: .8rem;
         color: #fff;
+        cursor: pointer;
         background-color: hsla(0, 0%, 100%, .05);
+        z-index: 1;
+
+        &:hover {
+          box-shadow: 0 0 20px $primary-color;
+        }
       }
     }
   }
@@ -499,24 +505,27 @@ nav {
 
   .tech-icons {
     font-size: 6rem;
-    padding: 10px;
-    border: 1.7px solid rgba(200, 137, 230, 0.637);
-    border-radius: 5px;
+    padding: 15px;
+    border: 1.7px solid #fff;
+    border-radius: 20px;
     box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
     transition: all 0.4s ease 0s;
     width: 7rem;
     height: 7rem;
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover {
+      transform: scale(1.01);
+      overflow: hidden;
+      border: 1.7px solid $primary-color;
+      box-shadow: 0 0 8px $primary-color;
+    }
 
     svg {
       fill: $primary-color;
     }
   }
-}
-
-.tech-icons:hover {
-  transform: scale(1.05);
-  overflow: hidden;
-  border: 2.2px solid rgba(197, 115, 230, 0.883);
 }
 
 .tech-icon-images {
