@@ -32,7 +32,7 @@ function NavBar() {
         }
         <div className="fork-btn">
           <Button
-            href="https://github.com/nilesh0627"
+            href="https://github.com/nilesh0627/portfolio"
             target="_blank"
             className="fork-btn-inner"
           >
