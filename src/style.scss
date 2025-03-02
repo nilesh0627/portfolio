@@ -212,6 +212,18 @@ nav {
   display: grid;
   row-gap: 1.3rem;
 
+  .current-role {
+    display: flex;
+    column-gap: .6rem;
+    align-items: center;
+    border: 2px solid $primary-color;
+    padding: 1rem;
+    border-radius: 1.1rem;
+    width: fit-content;
+    box-shadow: 0 0 10px $primary-color;
+    text-shadow: 0 0 6px $primary-color;
+  }
+
   .type-container {
     display: flex;
     align-items: center;
