@@ -1,5 +1,4 @@
 import {
-    AiFillStar,
     AiOutlineHome,
     AiOutlineFundProjectionScreen,
     AiOutlineUser,

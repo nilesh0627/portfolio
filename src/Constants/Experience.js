@@ -90,7 +90,7 @@ export const WORK_EXPERIENCE = [
             "JavaScript",
             "React.js",
             "Redux",
-            "ES6", ,
+            "ES6",
             "HTML",
             "CSS"
         ]
