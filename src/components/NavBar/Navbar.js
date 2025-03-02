@@ -9,7 +9,6 @@ import NavItem from "./NavItem";
 import { Link } from "react-router-dom";
 
 function NavBar() {
-  const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
   function scrollHandler() {
@@ -24,7 +23,6 @@ function NavBar() {
 
   return (
     <nav
-      expanded={expand}
       className={navColour ? "sticky" : "navbar"}
     >
       <Link className="logo" to="/">Nilesh<span className="primary">.</span>Mishra</Link>
