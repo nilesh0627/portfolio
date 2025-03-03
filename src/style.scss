@@ -146,7 +146,16 @@ nav {
   text-decoration: none;
   font-size: 2rem;
   font-weight: bolder;
-  color: $text-color;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 1, 1) infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
 }
 
 /* --------- */
@@ -221,7 +230,14 @@ nav {
     border-radius: 1.1rem;
     width: fit-content;
     box-shadow: 0 0 10px $primary-color;
-    text-shadow: 0 0 6px $primary-color;
+
+    .role-marker {
+      width: 10px;
+      height: 10px;
+      background-color: $primary-color;
+      border-radius: 50%;
+      box-shadow: 0 0 40px $primary-color;
+    }
   }
 
   .type-container {

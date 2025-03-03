@@ -25,7 +25,7 @@ function NavBar() {
     <nav
       className={navColour ? "sticky" : "navbar"}
     >
-      <Link className="logo" to="/">Nilesh<span className="primary">.</span>Mishra</Link>
+      <Link className="logo primary" to="/">{"</NM>"}</Link>
       <section className="navbar-menu-items">
         {
           NAVBAR_ITEMS.map(({ Icon, name, to }) => <NavItem key={name} Icon={Icon} name={name} to={to} />)

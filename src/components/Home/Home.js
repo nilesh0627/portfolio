@@ -1,8 +1,4 @@
 import homeLogo from "../../Assets/home-main.svg";
-import { FcBusinessman } from "react-icons/fc";
-
-
-
 import Particle from "../Particle";
 import Intro from "./Intro";
 import Type from "./Type";
@@ -15,7 +11,7 @@ function Home() {
         <article className="home-content">
           <div className="home-header">
             <h1 className="current-role">
-              <FcBusinessman />
+              <span className="role-marker animate-pulse"></span>
               Senior Frontend Engineer
             </h1>
 
