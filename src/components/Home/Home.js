@@ -1,6 +1,4 @@
 import homeLogo from "../../Assets/home-main.svg";
-import { SiJavascript } from "react-icons/si";
-import { IoLogoJavascript } from "react-icons/io";
 import { FcBusinessman } from "react-icons/fc";
 
 
