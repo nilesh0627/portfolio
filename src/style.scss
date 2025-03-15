@@ -127,6 +127,8 @@ nav {
 
     svg {
       margin-bottom: 2px;
+      height: 24px;
+      width: 24px;
     }
   }
 }
@@ -435,7 +437,7 @@ nav {
 /* Experience */
 /* --------- */
 
-.about-section {
+.experience-section {
   position: relative;
   padding-top: 150px;
   padding-bottom: 30px;
@@ -535,13 +537,13 @@ nav {
 
   .tech-icons {
     font-size: 6rem;
-    padding: 15px;
+    padding: 12px;
     border: 1.7px solid #fff;
     border-radius: 20px;
     box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
     transition: all 0.4s ease 0s;
-    width: 7rem;
-    height: 7rem;
+    width: 9rem;
+    height: 9rem;
     cursor: pointer;
     z-index: 1;
 
@@ -698,6 +700,32 @@ nav {
 .fork-btn {
   font-size: 1.1em;
 }
+
+
+/* Contact */
+
+.contact-wrapper {
+  padding: 12rem 20rem;
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding-top: 1rem;
+
+    :nth-child(3) {
+      grid-column: 1/-1;
+    }
+
+    button {
+      grid-column: 2/-1;
+      justify-self: end;
+      color: $text-color;
+    }
+  }
+}
+
+
 
 .MuiButton-root.fork-btn-inner {
   line-height: 1.4em;

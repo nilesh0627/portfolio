@@ -9,11 +9,11 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-import { WORK_EXPERIENCE } from "../../Constants";
+import { WORK_EXPERIENCE } from "../../utils/constants";
 
 function Experience() {
   return (
-    <div className="about-section">
+    <div className="experience-section">
       <Particle />
       <div className="work-experience">
         <h1>Work <span className="primary">Experience</span></h1>

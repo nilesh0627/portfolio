@@ -5,12 +5,15 @@ import Home from "./components/Home/Home";
 import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/Resume";
+import Contact from "./components/Contact/contact";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate
 } from "react-router-dom";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.scss";
 import "./App.scss";
@@ -26,20 +29,30 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
+
   return (
     <Router>
       <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-        <Footer />
-      </div>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <div className="App" id={load ? "no-scroll" : "scroll"}>
+          <Navbar />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+          <Footer />
+        </div>
+      </ThemeProvider>
     </Router>
   );
 }

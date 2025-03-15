@@ -1,9 +1,11 @@
 import {
     AiOutlineHome,
-    AiOutlineFundProjectionScreen,
     AiOutlineUser,
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
+import { IoIosContact } from "react-icons/io";
+
+
 export const WORK_EXPERIENCE = [
     {
         company: "ConcertAI",
@@ -114,14 +116,14 @@ export const NAVBAR_ITEMS = [
         to: '/experience'
     },
     {
-        Icon: AiOutlineFundProjectionScreen,
-        name: 'Projects',
-        to: '/projects'
-    },
-    {
         Icon: CgFileDocument,
         name: 'Resume',
         to: '/resume'
+    },
+    {
+        Icon: IoIosContact,
+        name: 'Contact',
+        to: '/Contact'
     },
 ]
 

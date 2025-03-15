@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from '@mui/material/Button';
 import { CgGitFork } from "react-icons/cg";
-import { NAVBAR_ITEMS } from "../../Constants"
+import { NAVBAR_ITEMS } from "../../utils/constants"
 import {
   AiFillStar
 } from "react-icons/ai";

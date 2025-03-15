@@ -8,6 +8,7 @@ import {
   DiJava,
 } from "react-icons/di";
 import {
+  SiJavascript,
   SiRedis,
   SiFirebase,
   SiNextdotjs,
@@ -19,7 +20,7 @@ function Techstack() {
   return (
     <div className="tech-icons-wrapper">
       <div className="tech-icons">
-        <DiJavascript1 />
+        <SiJavascript />
       </div>
       <div className="tech-icons">
         <DiNodejs />
