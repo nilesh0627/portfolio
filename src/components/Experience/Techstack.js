@@ -1,5 +1,4 @@
 import {
-  DiJavascript1,
   DiReact,
   DiNodejs,
   DiMongodb,
