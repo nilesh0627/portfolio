@@ -95,41 +95,45 @@ nav {
   justify-content: space-between;
   column-gap: 2.5rem;
 
-  .navbar-menu-item {
-    text-decoration: none;
-    color: $text-color;
-    border-bottom-width: 0;
-    transition: all 1s ease-out;
+  button {
+    display: none;
+  }
+}
 
-    .nav-item-wrapper {
-      display: flex;
-      align-items: center;
-      column-gap: .5rem;
-    }
+.navbar-menu-item {
+  text-decoration: none;
+  color: $text-color;
+  border-bottom-width: 0;
+  transition: all 1s ease-out;
 
-    &::after {
-      content: "";
-      position: relative;
-      display: block;
-      height: .3rem;
-      width: 0;
-      border-radius: 1rem;
-      background: $primary-color;
-      bottom: 1px;
-      left: 0;
-      z-index: -1;
-      transition: all 0.3s ease-out 0s;
-    }
+  .nav-item-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+  }
 
-    &:hover::after {
-      width: 100%;
-    }
+  &::after {
+    content: "";
+    position: relative;
+    display: block;
+    height: .3rem;
+    width: 0;
+    border-radius: 1rem;
+    background: $primary-color;
+    bottom: 1px;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-out 0s;
+  }
 
-    svg {
-      margin-bottom: 2px;
-      height: 24px;
-      width: 24px;
-    }
+  &:hover::after {
+    width: 100%;
+  }
+
+  svg {
+    margin-bottom: 2px;
+    height: 24px;
+    width: 24px;
   }
 }
 
@@ -291,14 +295,16 @@ nav {
   color: $text-color;
 }
 
+.Typewriter {
+  font-size: 2.2rem;
+}
+
 .Typewriter__wrapper {
-  font-size: 2.2em;
   color: $primary-color;
   font-weight: 600;
 }
 
 .Typewriter__cursor {
-  font-size: 2.4em;
   color: $primary-color;
 }
 
@@ -424,6 +430,7 @@ nav {
 }
 
 .footer-icons {
+  display: flex;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   padding: 0;
@@ -747,4 +754,70 @@ nav {
 
 .MuiButtonBase-root.MuiButton-root {
   background-color: $secondary-color;
+}
+
+
+
+/* Media quries */
+@media(max-width: $mobile) {
+  nav {
+    padding: 1.3rem 1rem;
+  }
+
+  .navbar-menu-items {
+    align-items: center;
+    column-gap: .5rem;
+
+    .navbar-menu-item {
+      display: none;
+    }
+
+    button {
+      display: inline;
+      margin: 8px 0px 0 4px;
+      padding: 0;
+      // background-color: $secondary-color;
+      // padding: 0.25rem;
+      // border-radius: 4px;
+    }
+  }
+
+  .home-content {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .container-padding {
+    padding: 7rem 2rem 0 2rem;
+  }
+
+  .Typewriter,
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .home-content img {
+    width: 100%;
+  }
+
+  .home-about-section {
+    padding-top: 0;
+  }
+
+  .about-myself {
+    flex-direction: column;
+
+    .myAvtar {
+      align-self: center;
+    }
+  }
+
+  .footer {
+    font-size: 10px;
+
+    .footer-body {
+      align-content: center;
+    }
+  }
+
 }

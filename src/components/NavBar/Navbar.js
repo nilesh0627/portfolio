@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Button from '@mui/material/Button';
+import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem } from '@mui/material';
+import { IoMenuOutline } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 import { CgGitFork } from "react-icons/cg";
 import { NAVBAR_ITEMS } from "../../utils/constants"
 import {
@@ -10,6 +13,10 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   const [navColour, updateNavbar] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
+  const handleMenuClose = () => setAnchorEl(null);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -40,6 +47,26 @@ function NavBar() {
             <AiFillStar style={{ fontSize: "1.1em" }} />
           </Button>
         </div>
+        <IconButton
+          size="large"
+          edge="end"
+          color="inherit"
+          aria-label="menu"
+          onClick={handleMenuOpen}
+        >
+          {Boolean(anchorEl) ? <IoMdClose /> : <IoMenuOutline />}
+        </IconButton>
+
+        {/* Mobile Dropdown Menu */}
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+        >
+          {
+            NAVBAR_ITEMS.map(({ Icon, name, to }) => <MenuItem onClick={handleMenuClose}><NavItem key={name} Icon={Icon} name={name} to={to} /></MenuItem>)
+          }
+        </Menu>
       </section>
     </nav >
   );

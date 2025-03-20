@@ -1,12 +1,17 @@
 $section-background-color: linear-gradient(to bottom left,
-        rgba(17, 16, 16, 0.582),
-        rgba(12, 8, 24, 0.904));
+                rgba(17, 16, 16, 0.582),
+                rgba(12, 8, 24, 0.904));
 
 $image-gradient: linear-gradient(to bottom left,
-        rgba(17, 16, 16, 0.678),
-        rgba(12, 10, 22, 0.863));
+                rgba(17, 16, 16, 0.678),
+                rgba(12, 10, 22, 0.863));
 
 $primary-color: #cd5ff8;
 $secondary-color: #623686;
 $text-color: #FFFFFF;
 $secondary-text-color: darkgray;
+
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1200px;
