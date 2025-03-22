@@ -31,6 +31,7 @@ export default function Contact() {
                         severity: 'success',
                         message: `Message sent successfully! ${result.text}`
                     })
+                    form.current.reset();
                 },
                 (error) => {
                     setSnackbarInfo({

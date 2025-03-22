@@ -676,14 +676,15 @@ nav {
 /* Contact */
 
 .contact-wrapper {
-  padding: 12rem 20rem;
   padding: 8rem 2rem 2rem 2rem;
+  justify-items: center;
 
   .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    padding: 2rem 25rem 2rem 25rem;
+    max-width: 700px;
+    margin: auto;
 
     :nth-child(3) {
       grid-column: 1/-1;
@@ -781,6 +782,7 @@ nav {
     padding: 8rem 2rem 2rem 2rem;
 
     .contact {
+      grid-template-columns: none;
       padding: 0;
     }
   }
