@@ -75,6 +75,11 @@ button:focus {
   border-radius: 20px;
 }
 
+/* To make footer stay at bottom*/
+.mainContainerWrapper {
+  min-height: calc(100vh - 45px);
+}
+
 /* --------- */
 /* Navbar Section  */
 /* --------- */
@@ -479,14 +484,14 @@ nav {
       list-style: none;
       display: flex;
       gap: 1.2rem;
-      font-size: .9rem;
+      font-size: .8rem;
       padding-top: 2rem;
       flex-wrap: wrap;
 
       .skill {
         padding: .6rem;
         border: 1px solid darkgray;
-        border-radius: .8rem;
+        border-radius: .65rem;
         color: #fff;
         cursor: pointer;
         background-color: hsla(0, 0%, 100%, .05);
@@ -543,26 +548,22 @@ nav {
   flex-wrap: wrap;
 
   .tech-icons {
-    font-size: 6rem;
     padding: 12px;
-    border: 1.7px solid #fff;
-    border-radius: 20px;
-    box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
     transition: all 0.4s ease 0s;
-    width: 9rem;
-    height: 9rem;
     cursor: pointer;
     z-index: 1;
 
     &:hover {
       transform: scale(1.01);
       overflow: hidden;
-      border: 1.7px solid $primary-color;
+      border-radius: 20px;
       box-shadow: 0 0 8px $primary-color;
     }
 
     svg {
       fill: $primary-color;
+      width: 7rem;
+      height: 7rem;
     }
   }
 }
@@ -713,6 +714,7 @@ nav {
 
 .contact-wrapper {
   padding: 12rem 20rem;
+  padding: 8rem 2rem 2rem 2rem;
 
   .contact {
     display: grid;
@@ -812,6 +814,39 @@ nav {
     }
   }
 
+  .contact-wrapper {
+    padding: 8rem 2rem 2rem 2rem;
+  }
+
+  .experience-section {
+    .about-me-wrapper {
+      flex-direction: column;
+
+      .about-img img {
+        width: 25rem;
+      }
+    }
+  }
+
+  .experience-section {
+    padding: 6rem 1rem 3rem 1rem;
+
+    .work-experience .experience-description {
+      font-size: 1rem;
+    }
+  }
+
+  .tech-icons-wrapper {
+    padding: 0;
+
+    .tech-icons {
+      svg {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+
   .footer {
     font-size: 10px;
 
@@ -819,5 +854,4 @@ nav {
       align-content: center;
     }
   }
-
 }
