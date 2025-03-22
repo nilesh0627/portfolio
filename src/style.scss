@@ -831,8 +831,19 @@ nav {
   .experience-section {
     padding: 6rem 1rem 3rem 1rem;
 
-    .work-experience .experience-description {
-      font-size: 1rem;
+    .work-experience {
+      .experience-description {
+        font-size: 1rem;
+      }
+
+      .experience-label {
+        column-gap: 1rem;
+
+        ~.MuiStepContent-root {
+          padding-left: 0;
+        }
+      }
+
     }
   }
 

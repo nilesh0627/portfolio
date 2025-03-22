@@ -29,7 +29,7 @@ function Experience() {
                 <ul className="experience-description">
                   {
                     job.workList.map(work => <li key={work.name}>
-                      <b>{work.name} </b>
+                      <b className="primary">{work.name} </b>
                       <span> {work.description}</span>
                     </li>)
                   }
