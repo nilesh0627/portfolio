@@ -835,3 +835,22 @@ nav {
     }
   }
 }
+
+@media(max-width: $tablet) {
+  .home-content {
+    flex-direction: column;
+    padding-right: 5rem;
+  }
+
+  .home-section {
+    padding: 4rem 0rem 0;
+  }
+
+  .experience-section .about-me-wrapper {
+    flex-direction: column;
+  }
+
+  .tech-icons-wrapper {
+    padding: 0;
+  }
+}
