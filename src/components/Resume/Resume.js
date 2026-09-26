@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from '@mui/material/Button';
 import Particle from "../Particle";
-import pdf from "../../Assets/../Assets/Nilesh__CV.pdf";
+import pdf from "../../Assets/Nilesh_SWE.pdf";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";

@@ -1,15 +1,22 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Nilesh",
+  "name": "Nilesh Mishra — Senior Full-Stack Product Engineer",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#05060b",
+  "background_color": "#05060b"
 }
