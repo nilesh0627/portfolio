@@ -3,7 +3,6 @@ import {
   FiArrowDown,
   FiArrowUpRight,
   FiBook,
-  FiCheck,
   FiDatabase,
   FiDownload,
   FiGithub,
@@ -305,6 +304,40 @@ function CaseVisual({ project }) {
   );
 }
 
+function LogoMark() {
+  return (
+    <svg className="wordmark__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="lm-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#171b2c" />
+          <stop offset="1" stopColor="#080a12" />
+        </linearGradient>
+        <linearGradient id="lm-beam" gradientUnits="userSpaceOnUse" x1="22" y1="18" x2="42" y2="46">
+          <stop offset="0" stopColor="#818cf8" />
+          <stop offset="0.55" stopColor="#22d3ee" />
+          <stop offset="1" stopColor="#a855f7" />
+        </linearGradient>
+        <radialGradient id="lm-sheen" cx="0.3" cy="0.16" r="0.95">
+          <stop offset="0" stopColor="#ffffff" stopOpacity="0.1" />
+          <stop offset="0.55" stopColor="#ffffff" stopOpacity="0" />
+        </radialGradient>
+        <filter id="lm-soft" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="3.2" />
+        </filter>
+      </defs>
+      <rect width="64" height="64" rx="16" fill="url(#lm-bg)" />
+      <rect width="64" height="64" rx="16" fill="url(#lm-sheen)" />
+      <rect x="0.6" y="0.6" width="62.8" height="62.8" rx="15.4" fill="none" stroke="#ffffff" strokeOpacity="0.08" strokeWidth="1.2" />
+      <g fill="none" strokeLinecap="round" strokeWidth="6.5">
+        <path d="M22 46 V18" stroke="#eef1fb" />
+        <path d="M42 46 V18" stroke="#eef1fb" strokeOpacity="0.92" />
+        <path d="M22 18 L42 46" stroke="url(#lm-beam)" filter="url(#lm-soft)" opacity="0.65" />
+        <path d="M22 18 L42 46" stroke="url(#lm-beam)" />
+      </g>
+    </svg>
+  );
+}
+
 function App() {
   const [activeSection, setActiveSection] = useState("top");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -360,18 +393,19 @@ function App() {
     <div className={`portfolio ${isLightMode ? "portfolio--light" : ""}`}>
       <header className={`site-header ${isScrolled ? "site-header--scrolled" : ""}`}>
         <a className="wordmark" href="#top" onClick={closeMenu} aria-label="Nilesh Mishra home">
-          <span className="wordmark__monogram">NM</span>
+          <LogoMark />
           <span className="wordmark__name">nilesh<span className="grad">.dev</span></span>
         </a>
 
         <nav className="nav-pill" aria-label="Main navigation">
-          {navigationItems.map((item) => (
+          {navigationItems.map((item, index) => (
             <a
               key={item.id}
               className={activeSection === item.id ? "is-active" : ""}
               href={`#${item.id}`}
               onClick={() => setActiveSection(item.id)}
             >
+              <span className="nav-pill__index">{String(index + 1).padStart(2, "0")}</span>
               {item.label}
             </a>
           ))}
@@ -505,7 +539,7 @@ function App() {
                   <span className="case-study__index">{item.number}</span>
                   <div className="case-study__who">
                     <h3>{item.company}</h3>
-                    <p>{item.role} · {item.period} · Bengaluru, India</p>
+                    <p><span>{item.role}</span><i>·</i><span>{item.period}</span><i>·</i><span>Bengaluru, India</span></p>
                   </div>
                   <span className="case-study__discipline">{item.discipline}</span>
                 </div>
@@ -525,10 +559,18 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <ul className="case-study__evidence">
-                  {item.highlights.map((highlight) => <li key={highlight}><FiCheck />{highlight}</li>)}
-                </ul>
-                <div className="case-stack">{item.stack.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                <ol className="case-study__evidence">
+                  {item.highlights.map((highlight, highlightIndex) => (
+                    <li className="case-study__step" key={highlight}>
+                      <span className="case-study__num">{String(highlightIndex + 1).padStart(2, "0")}</span>
+                      <p>{highlight}</p>
+                    </li>
+                  ))}
+                </ol>
+                <div className="case-stack">
+                  <span className="case-stack__label">Stack</span>
+                  {item.stack.map((tag) => <span className="case-stack__tag" key={tag}>{tag}</span>)}
+                </div>
               </article>
             ))}
           </div>
@@ -551,9 +593,9 @@ function App() {
                   </div>
                   <h3>{capability.title}</h3>
                   <p>{capability.copy}</p>
-                  <ul className="capability-card__points">
-                    {capability.points.map((point) => <li key={point}><FiCheck />{point}</li>)}
-                  </ul>
+                  <ol className="capability-card__points">
+                    {capability.points.map((point) => <li key={point}>{point}</li>)}
+                  </ol>
                   <div className="capability-card__meta">
                     <span className="capability-card__tag">{capability.tag}</span>
                     <span className="capability-card__footer">{capability.footer}</span>
@@ -614,8 +656,12 @@ function App() {
           <div className="skills-grid">
             {skillGroups.map((group, index) => (
               <article className="skill-group" key={group.label} data-reveal style={{ transitionDelay: `${index * 60}ms` }}>
-                <h4>{group.label}</h4>
-                <div>{group.items.map((item) => <span key={item}>{item}</span>)}</div>
+                <div className="skill-group__head">
+                  <span className="skill-group__index">{String(index + 1).padStart(2, "0")}</span>
+                  <h4>{group.label}</h4>
+                  <span className="skill-group__count">{String(group.items.length).padStart(2, "0")}</span>
+                </div>
+                <div className="skill-group__chips">{group.items.map((item) => <span key={item}>{item}</span>)}</div>
               </article>
             ))}
           </div>
