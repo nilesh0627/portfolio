@@ -20,102 +20,133 @@ import {
 import {
   SiDocker,
   SiExpress,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
   SiJest,
+  SiMongodb,
+  SiNginx,
   SiNodedotjs,
   SiPostgresql,
   SiReact,
+  SiRedux,
+  SiTurborepo,
   SiTypescript,
+  SiWebpack,
 } from "react-icons/si";
 import resumePdf from "./Assets/Nilesh_SWE.pdf";
 import "./style.scss";
 import "./App.scss";
 
 const navigationItems = [
-  { id: "work", label: "Work", index: "01" },
+  { id: "experience", label: "Experience", index: "01" },
   { id: "approach", label: "Approach", index: "02" },
-  { id: "journey", label: "Journey", index: "03" },
-  { id: "background", label: "Background", index: "04" },
-  { id: "contact", label: "Contact", index: "05" },
+  { id: "background", label: "Background", index: "03" },
+  { id: "contact", label: "Contact", index: "04" },
 ];
 
-const cases = [
+const experience = [
   {
-    id: "concert",
     number: "01",
     company: "ConcertAI",
-    role: "Senior Engineer",
+    tenure: "Full-time",
+    location: "Bengaluru, India · Hybrid",
     period: "Jul 2023 — Present",
     discipline: "Clinical intelligence · Enterprise SaaS",
+    roles: [
+      {
+        title: "Senior Engineer",
+        period: "Apr 2026 — Present",
+        points: [
+          "Leading performance optimization across the Precision Suite — code splitting, lazy loading, Brotli, and HTTP caching (Cache-Control, ETag) — improving Core Web Vitals by 25%.",
+          "Currently building CancerLinQ — Patient View, Pre-Screening, and Schedule View modules for CRCs and site coordinators.",
+        ],
+      },
+      {
+        title: "Software Engineer",
+        period: "Jul 2023 — Apr 2026",
+        points: [
+          "Sole frontend engineer for Precision Trials and ACT since inception — owning UI architecture and five Turborepo monorepos across the Precision Suite.",
+          "Shipped the IE Digitization flow — a natural-language interface for cohort generation that replaced a manual drag-and-drop criteria builder, cutting cohort creation from 3h to 15m.",
+          "Built Precision Copilot surfaces for clinical research workflows — protocol interpretation, study insights, and decision support for trial teams.",
+          "Built Site Selection and Study Design Agent UIs powering AI-driven site recommendations, enrollment forecasting, and diversity modeling — cutting trial timelines by 3–9 months.",
+          "Built UI surfaces for ACT's predictive modeling engine, presenting trial success forecasts up to 30% more accurate than traditional estimation methods.",
+          "Bootstrapped 5 product monorepos (Precision Trials, ACT, Explorer, GTM, Launch) on Turborepo with shared package boundaries and task-level caching.",
+          "Led TDD adoption with Jest and React Testing Library across the frontend codebase.",
+        ],
+      },
+    ],
     name: "Precision Trials · ACT · CancerLinQ",
-    title: "Making the hardest decisions feel obvious.",
-    description:
-      "Sole frontend engineer since inception for two flagship clinical AI SaaS products — owning end-to-end UI architecture, from monorepo design to feature delivery, for enterprise pharma and healthcare clients.",
     metrics: [
       { value: "3h → 15m", label: "cohort creation, down from manual building" },
       { value: "$4M+", label: "potential savings unlocked per Phase II/III study" },
       { value: "75%", label: "of the world's top life-sciences companies served" },
     ],
     systemLabel: "cohort-decision.app",
-    highlights: [
-      "Shipped the IE Digitization flow — a natural-language interface for cohort generation that replaced a manual drag-and-drop criteria builder.",
-      "Built Site Selection and Study Design Agent UIs powering AI-driven site recommendations, enrollment forecasting, and diversity modeling — cutting trial timelines by 3–9 months.",
-      "Built UI surfaces for ACT's predictive modeling engine, presenting trial success forecasts up to 30% more accurate than traditional estimation methods.",
-      "Bootstrapped 5 product monorepos (Precision Trials, ACT, Explorer, GTM, Launch) on Turborepo with shared package boundaries and task-level caching.",
-      "Led TDD adoption with Jest and React Testing Library; improved Core Web Vitals by 25% through code splitting, lazy loading, Brotli, and HTTP caching (Cache-Control, ETag).",
-      "Currently building CancerLinQ — Patient View, Pre-Screening, and Schedule View modules for CRCs and site coordinators.",
-    ],
-    stack: ["React", "TypeScript", "Redux Toolkit", "Node.js", "Express", "Turborepo"],
+    stack: ["React", "TypeScript", "Redux Toolkit", "Node.js", "Express", "Turborepo", "Jest"],
     tone: "clinical",
   },
   {
-    id: "sapient",
     number: "02",
     company: "Publicis Sapient",
-    role: "Associate Technology L2",
+    tenure: "Full-time",
+    location: "Bengaluru, India · Remote",
     period: "May 2021 — Jul 2023",
     discipline: "Automotive commerce · Multi-brand platform",
+    roles: [
+      {
+        title: "Associate Technology L2",
+        period: "Feb 2023 — Jul 2023",
+        points: [
+          "Designed an offers engine supporting complex AND/OR combination logic, correctly rendering every valid permutation of stacked and conditional promotional offers.",
+          "Architected reusable AEM component templates so content authors configure brand-specific experiences without engineering intervention.",
+          "Built a shared React component library under TDD, enforcing consistency across a multi-contributor codebase.",
+        ],
+      },
+      {
+        title: "Associate Technology L1",
+        period: "May 2021 — Jan 2023",
+        points: [
+          "Built the multi-brand offers homepage for RAM, Jeep, Chrysler, Dodge, Alfa Romeo, and Fiat — dynamically rendering brand-specific content via Adobe Experience Manager.",
+          "Led internationalization of the Maserati platform (legacy AEM + React) with country/language routing (/us/en, /it/it) across 10–12 countries.",
+          "Integrated Adobe Analytics for funnel tracking and personalization insights that directly informed product decisions.",
+        ],
+      },
+    ],
     name: "Stellantis Offers Engine",
-    title: "Complex rules. One clear offer.",
-    description:
-      "A multi-brand commerce platform for Stellantis — one offers engine resolving layered promotion rules into valid, legible offers across brands, markets, and languages.",
     metrics: [
       { value: "10–12", label: "markets localised on one routing layer" },
       { value: "7+", label: "Stellantis brands rendered from a single engine" },
       { value: "0", label: "engineer touches per new brand campaign" },
     ],
     systemLabel: "offer-engine.app",
-    highlights: [
-      "Built the multi-brand offers homepage for RAM, Jeep, Chrysler, Dodge, Alfa Romeo, and Fiat — dynamically rendering brand-specific content via Adobe Experience Manager.",
-      "Designed an offers engine supporting complex AND/OR combination logic, correctly rendering every valid permutation of stacked and conditional promotional offers.",
-      "Architected reusable AEM component templates so content authors configure brand-specific experiences without engineering intervention.",
-      "Led internationalization of the Maserati platform (legacy AEM + React) with country/language routing (/us/en, /it/it) across 10–12 countries.",
-      "Integrated Adobe Analytics for funnel tracking and personalization insights that directly informed product decisions.",
-      "Built a shared React component library under TDD, enforcing consistency across a multi-contributor codebase.",
-    ],
     stack: ["React", "AEM", "Node.js", "PostgreSQL", "Adobe Analytics"],
     tone: "commerce",
   },
   {
-    id: "infosys",
     number: "03",
     company: "Infosys",
-    role: "System Engineer",
+    tenure: "Full-time",
+    location: "Mangaluru, India",
     period: "Aug 2019 — May 2021",
     discipline: "Enterprise operations · Device lifecycle",
+    roles: [
+      {
+        title: "System Engineer",
+        period: "Aug 2019 — May 2021",
+        points: [
+          "Built an enterprise iOS device lifecycle tracking application in React.js — one continuous workflow from manufacturing line to customer sale.",
+          "Translated wireframes into responsive, production-grade React components across the device journey.",
+          "Established the team's frontend coding standards — the foundations everything since is built on.",
+        ],
+      },
+    ],
     name: "Device Lifecycle Tracker",
-    title: "Enterprise workflows, made legible.",
-    description:
-      "An end-to-end iOS device lifecycle application — every device tracked from manufacturing line to customer sale through one continuous React workflow.",
     metrics: [
       { value: "E2E", label: "device journey, factory to customer sale" },
       { value: "02", label: "years of enterprise foundations" },
     ],
     systemLabel: "lifecycle-ops.app",
-    highlights: [
-      "Built an enterprise iOS device lifecycle tracking application in React.js, managing the device journey from manufacturing to customer sale across an end-to-end workflow.",
-      "Translated wireframes into responsive, production-grade React components.",
-      "Established frontend coding standards for the team.",
-    ],
     stack: ["React.js", "JavaScript", "CSS3", "REST APIs"],
     tone: "lifecycle",
   },
@@ -176,39 +207,22 @@ const capabilities = [
   },
 ];
 
-const roles = [
-  {
-    period: "Jul 2023 — now",
-    company: "ConcertAI",
-    role: "Senior Engineer",
-    domain: "Clinical AI · Product systems",
-    copy: "Sole frontend engineer for Precision Trials and ACT since inception — owning UI architecture, five Turborepo monorepos, and the performance practice across the Precision Suite.",
-  },
-  {
-    period: "May 2021 — Jul 2023",
-    company: "Publicis Sapient",
-    role: "Associate Technology L2",
-    domain: "Automotive commerce · Platform work",
-    copy: "Multi-brand commerce for Stellantis: the offers engine, reusable AEM component architecture, and internationalization across 10–12 markets.",
-  },
-  {
-    period: "Aug 2019 — May 2021",
-    company: "Infosys",
-    role: "System Engineer",
-    domain: "Enterprise operations · Foundations",
-    copy: "Built an enterprise iOS device-lifecycle tracker in React.js and set the team's frontend coding standards — the foundations everything since is built on.",
-  },
-];
-
-const skillGroups = [
-  { label: "Languages", items: ["JavaScript (ES6+)", "TypeScript"] },
-  { label: "Frameworks & Libraries", items: ["React.js", "Redux", "Redux Toolkit", "Node.js", "Express"] },
-  { label: "Architecture", items: ["Micro-frontends", "Webpack Module Federation", "Turborepo", "Monorepo"] },
-  { label: "Testing", items: ["Jest", "React Testing Library", "TDD — unit, integration, E2E"] },
-  { label: "Performance & Monitoring", items: ["Lighthouse", "Web Vitals", "Code splitting", "Bundle optimization"] },
-  { label: "DevOps & Infrastructure", items: ["Docker", "CI/CD pipelines", "Nginx (gzip / caching)"] },
-  { label: "Styling & Design", items: ["CSS3", "SCSS/SASS", "Design systems", "Responsive design", "WCAG accessibility"] },
-  { label: "APIs & Integrations", items: ["REST APIs", "Server-Sent Events", "Adobe Analytics", "Mixpanel"] },
+const techCards = [
+  { name: "React", Icon: SiReact, level: 9, years: "7+", group: "Frontend" },
+  { name: "TypeScript", Icon: SiTypescript, level: 9, years: "4+", group: "Languages" },
+  { name: "JavaScript", Icon: SiJavascript, level: 9, years: "7+", group: "Languages" },
+  { name: "HTML / CSS", Icon: SiHtml5, level: 9, years: "7+", group: "Frontend" },
+  { name: "Node.js", Icon: SiNodedotjs, level: 8, years: "5+", group: "Backend" },
+  { name: "Express", Icon: SiExpress, level: 8, years: "5+", group: "Backend" },
+  { name: "Redux", Icon: SiRedux, level: 8, years: "5+", group: "Frontend" },
+  { name: "PostgreSQL", Icon: SiPostgresql, level: 8, years: "5+", group: "Data" },
+  { name: "Jest", Icon: SiJest, level: 8, years: "4+", group: "Testing" },
+  { name: "Turborepo", Icon: SiTurborepo, level: 8, years: "3+", group: "Architecture" },
+  { name: "Git", Icon: SiGit, level: 8, years: "7+", group: "Tooling" },
+  { name: "Webpack", Icon: SiWebpack, level: 7, years: "4+", group: "Architecture" },
+  { name: "MongoDB", Icon: SiMongodb, level: 7, years: "3+", group: "Data" },
+  { name: "Docker", Icon: SiDocker, level: 7, years: "3+", group: "DevOps" },
+  { name: "Nginx", Icon: SiNginx, level: 7, years: "3+", group: "DevOps" },
 ];
 
 const technologies = [
@@ -364,7 +378,7 @@ function App() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visibleSection) setActiveSection(visibleSection.target.id);
       },
-      { rootMargin: "-22% 0px -63% 0px", threshold: [0.05, 0.2, 0.45] }
+      { rootMargin: "-22% 0px -63% 0px", threshold: [0, 0.05, 0.2, 0.45] }
     );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
@@ -463,7 +477,7 @@ function App() {
                 automotive commerce.
               </p>
               <div className="hero__actions">
-                <a className="btn btn--primary" href="#work">View selected work <FiArrowDown /></a>
+                <a className="btn btn--primary" href="#experience">View experience <FiArrowDown /></a>
                 <a className="btn btn--ghost" href={resumePdf} download>Download résumé <FiDownload /></a>
               </div>
               <div className="hero__socials">
@@ -525,30 +539,48 @@ function App() {
           </div>
         </section>
 
-        <section className="work-section shell" id="work" data-nav-section aria-labelledby="work-title">
+        <section className="experience shell" id="experience" data-nav-section aria-labelledby="experience-title">
           <div className="section-head" data-reveal>
-            <p className="eyebrow"><span className="eyebrow__index">01</span> Selected systems</p>
-            <h2 id="work-title">Evidence, not <span className="grad">empty adjectives.</span></h2>
-            <p className="section-head__copy">Three chapters of production work — clinical AI, global commerce, and enterprise operations — each with the receipts to match.</p>
+            <p className="eyebrow"><span className="eyebrow__index">01</span> Experience</p>
+            <h2 id="experience-title">Built through <span className="grad">harder problems.</span></h2>
+            <p className="section-head__copy">Seven years across clinical AI, global commerce, and enterprise operations — every role, the systems shipped inside it, and the outcomes to prove it.</p>
           </div>
 
-          <div className="cases">
-            {cases.map((item, index) => (
-              <article className={`case-study ${index % 2 === 1 ? "case-study--alt" : ""}`} key={item.id} data-reveal>
-                <div className="case-study__head">
-                  <span className="case-study__index">{item.number}</span>
-                  <div className="case-study__who">
+          <div className="xp-list">
+            {experience.map((item, index) => (
+              <article className="xp" key={item.company} data-reveal style={{ transitionDelay: `${index * 80}ms` }}>
+                <div className="xp__head">
+                  <span className="xp__tile">{item.number}</span>
+                  <div className="xp__id">
                     <h3>{item.company}</h3>
-                    <p><span>{item.role}</span><i>·</i><span>{item.period}</span><i>·</i><span>Bengaluru, India</span></p>
+                    <p className="xp__meta">
+                      <span>{item.tenure}</span>
+                      <i>·</i>
+                      <span>{item.location}</span>
+                    </p>
                   </div>
-                  <span className="case-study__discipline">{item.discipline}</span>
+                  <div className="xp__when">
+                    <span className="xp__period">{item.period}</span>
+                  </div>
                 </div>
-                <div className="case-study__grid">
-                  <CaseVisual project={item} />
-                  <div className="case-study__story">
-                    <p className="case-study__system">{item.systemLabel} · {item.name}</p>
-                    <h4>{item.title}</h4>
-                    <p className="case-study__description">{item.description}</p>
+
+                <div className="xp__body">
+                  <ul className="xp__roles">
+                    {item.roles.map((role) => (
+                      <li className="xp__role" key={role.title}>
+                        <div className="xp__role-head">
+                          <h4>{role.title}</h4>
+                          <span>{role.period}</span>
+                        </div>
+                        <ul className="xp__points">
+                          {role.points.map((point) => <li key={point}>{point}</li>)}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <aside className="xp__aside">
+                    <CaseVisual project={item} />
                     <div className="case-metrics">
                       {item.metrics.map((metric) => (
                         <div key={metric.label}>
@@ -557,19 +589,11 @@ function App() {
                         </div>
                       ))}
                     </div>
-                  </div>
-                </div>
-                <ol className="case-study__evidence">
-                  {item.highlights.map((highlight, highlightIndex) => (
-                    <li className="case-study__step" key={highlight}>
-                      <span className="case-study__num">{String(highlightIndex + 1).padStart(2, "0")}</span>
-                      <p>{highlight}</p>
-                    </li>
-                  ))}
-                </ol>
-                <div className="case-stack">
-                  <span className="case-stack__label">Stack</span>
-                  {item.stack.map((tag) => <span className="case-stack__tag" key={tag}>{tag}</span>)}
+                    <div className="case-stack">
+                      <span className="case-stack__label">Stack</span>
+                      {item.stack.map((tag) => <span className="case-stack__tag" key={tag}>{tag}</span>)}
+                    </div>
+                  </aside>
                 </div>
               </article>
             ))}
@@ -610,33 +634,9 @@ function App() {
           </div>
         </section>
 
-        <section className="journey shell" id="journey" data-nav-section aria-labelledby="journey-title">
-          <div className="section-head" data-reveal>
-            <p className="eyebrow"><span className="eyebrow__index">03</span> Professional journey</p>
-            <h2 id="journey-title">Built through <span className="grad">harder problems.</span></h2>
-            <p className="section-head__copy">A career across clinical AI, global commerce, and enterprise operations — each role adding a new layer of systems thinking.</p>
-          </div>
-          <div className="timeline">
-            {roles.map((role, index) => (
-              <article className="timeline-row" key={role.company} data-reveal style={{ transitionDelay: `${index * 90}ms` }}>
-                <span className="timeline-row__dot" aria-hidden="true" />
-                <div className="timeline-row__card">
-                  <div className="timeline-row__head">
-                    <span className="timeline-row__period">{role.period}</span>
-                    <span className="timeline-row__domain">{role.domain}</span>
-                  </div>
-                  <h3>{role.role}</h3>
-                  <p className="timeline-row__company">{role.company} · Bengaluru, India</p>
-                  <p className="timeline-row__copy">{role.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section className="background shell" id="background" data-nav-section aria-labelledby="background-title">
           <div className="section-head" data-reveal>
-            <p className="eyebrow"><span className="eyebrow__index">04</span> Background</p>
+            <p className="eyebrow"><span className="eyebrow__index">03</span> Background</p>
             <h2 id="background-title">The foundations <span className="grad">behind the craft.</span></h2>
             <p className="section-head__copy">Formal training and the full working toolkit — the same detail that appears on the résumé, in the open.</p>
           </div>
@@ -653,15 +653,15 @@ function App() {
             </div>
           </div>
 
-          <div className="skills-grid">
-            {skillGroups.map((group, index) => (
-              <article className="skill-group" key={group.label} data-reveal style={{ transitionDelay: `${index * 60}ms` }}>
-                <div className="skill-group__head">
-                  <span className="skill-group__index">{String(index + 1).padStart(2, "0")}</span>
-                  <h4>{group.label}</h4>
-                  <span className="skill-group__count">{String(group.items.length).padStart(2, "0")}</span>
-                </div>
-                <div className="skill-group__chips">{group.items.map((item) => <span key={item}>{item}</span>)}</div>
+          <div className="tech-grid">
+            {techCards.map((tech, index) => (
+              <article className="tech-card" key={tech.name} data-reveal style={{ transitionDelay: `${index * 40}ms` }}>
+                <span className="tech-card__ring" style={{ "--p": tech.level * 10 }} aria-hidden="true">
+                  <i><tech.Icon /></i>
+                </span>
+                <h4>{tech.name}</h4>
+                <p className="tech-card__score"><strong>{tech.level}</strong><span>/10</span></p>
+                <p className="tech-card__years">{tech.years} yrs · {tech.group}</p>
               </article>
             ))}
           </div>
@@ -685,7 +685,7 @@ function App() {
       </main>
 
       <footer className="site-footer shell">
-        <a className="wordmark" href="#top" aria-label="Back to top"><span className="wordmark__monogram">NM</span><span className="wordmark__name">nilesh<span className="grad">.dev</span></span></a>
+        <a className="wordmark" href="#top" aria-label="Back to top"><LogoMark /><span className="wordmark__name">nilesh<span className="grad">.dev</span></span></a>
         <p>Designed & engineered with intent · © {new Date().getFullYear()}</p>
         <a href="#top">Back to top <FiArrowUpRight /></a>
       </footer>
