@@ -370,18 +370,25 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll("[data-nav-section]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSection = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visibleSection) setActiveSection(visibleSection.target.id);
-      },
-      { rootMargin: "-22% 0px -63% 0px", threshold: [0, 0.05, 0.2, 0.45] }
-    );
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    const sections = Array.from(document.querySelectorAll("[data-nav-section]"));
+    const updateActiveSection = () => {
+      const line = window.scrollY + window.innerHeight * 0.35;
+      let current = sections.length ? sections[0].id : "top";
+      sections.forEach((section) => {
+        if (section.offsetTop <= line) current = section.id;
+      });
+      if (sections.length && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40) {
+        current = sections[sections.length - 1].id;
+      }
+      setActiveSection(current);
+    };
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
 
   useEffect(() => {
@@ -411,21 +418,26 @@ function App() {
           <span className="wordmark__name">nilesh<span className="grad">.dev</span></span>
         </a>
 
-        <nav className="nav-pill" aria-label="Main navigation">
-          {navigationItems.map((item, index) => (
+        <nav className="nav-links" aria-label="Main navigation">
+          {navigationItems.map((item) => (
             <a
               key={item.id}
               className={activeSection === item.id ? "is-active" : ""}
               href={`#${item.id}`}
               onClick={() => setActiveSection(item.id)}
             >
-              <span className="nav-pill__index">{String(index + 1).padStart(2, "0")}</span>
               {item.label}
             </a>
           ))}
         </nav>
 
         <div className="header-actions">
+          <div className="header-socials">
+            <a href="https://github.com/nilesh0627" target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a>
+            <a href="https://www.linkedin.com/in/nilesh0627/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a>
+            <a href="mailto:nilesh0627@gmail.com" aria-label="Email"><FiMail /></a>
+          </div>
+          <span className="header-divider" aria-hidden="true" />
           <button
             className="icon-button"
             type="button"
@@ -434,7 +446,6 @@ function App() {
           >
             {isLightMode ? <FiMoon /> : <FiSun />}
           </button>
-          <a className="btn btn--primary btn--small" href={resumePdf} download>Résumé <FiDownload /></a>
           <button
             className="icon-button menu-toggle"
             type="button"
